@@ -1,0 +1,7 @@
+<form (submit)="creatingTodo(); $event.preventDefault()">
+  <input [formControl]="todoText" type="text" required>
+  <button type="submit">add</button>
+</form>
+<div *ngIf="todoText.invalid && ( todoText.touched)" class="alert alert-danger">
+  <div >  Must be at least 3 characters long. !</div>
+</div>
